@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main { margin-bottom:40px;}
+
+#new { background:url(../images/index/graybg.gif); height:291px; width:860px; margin-left:55px; margin-bottom:30px;}
+#new .more { float:right;}
+#new .left { float:left; width:490px;}
+#new .left .hotTitle { margin:15px 0 0 30px;}
+#new .left .hotTitle a { text-decoration:none; font-size:14px; font-weight:bold;}
+#new .left .hotTitle a:hover {text-decoration:underline;}
+#new .left ul { display:block; float:left; padding:15px 12px;width:220px;}
+#new .left li { margin:10px 0;}
+#new .left li a:hover { text-decoration:underline;}
+#new .right { float:right; margin-right:15px;}
+
+#main .imformation {width:860px; margin-left:55px; background:url(../images/index/infbg.gif) repeat-x; height:230px;}
+#main .imformation .more { clear:both; width:400px; margin-left:350px; margin-top:30px;}
+#main .imformation .left { float:left; width:500px;}
+#main .imformation .left .hotTitle { margin:15px 0 0 30px;}
+#main .imformation .left .hotTitle a { text-decoration:underline; font-size:14px; font-weight:bold;}
+#main .imformation .left ul { display:block; float:left; padding:15px 12px; width:220px;}
+#main .imformation .left li { margin:10px 0;}
+#main .imformation .left li a:hover { background: #FC6;}
+#main .imformation .right { float:right; margin-right:15px;}
+#main .imformation .right img {}
+#main .imformation .gray { background:url(../images/index/gray.gif)}

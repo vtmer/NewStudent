@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="NewStudent_MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>新生专题 - 工大在线 [GDonline]</title>
+   <link href="css/base.css" rel="stylesheet" type="text/css" /> 
+   <script type="text/javascript" src="script/jquery.js"></script>
+   <script type="text/javascript">
+   var campus="<%=campus %>";
+   var columns="Default.aspx";
+   </script>
+<asp:contentplaceholder id="CSSPlaceHolder" runat="server">
+        </asp:contentplaceholder> 
+
+</head>
+<body>
+<form id="form1" runat="server">             
+<!--container是一个总的容器，包含header,main,footer子DIV    -->
+<div id="container">
+<!-- header是首页的头部，包含header_up和header_down两个子DIV  -->
+		<div id="header">
+           
+           <div id="headerUp">
+              <div ><img src="images/header1.gif" /></div>
+              <div style=" margin-top:-2px">
+                <a href="../Default.aspx" class="gdut"><img src="images/header2.gif" style="vertical-align:middle;margin-top:-2px" />GDUTonline.com</a><a href="Default.aspx?campus=daxuecheng" campus="daxuecheng">大学城</a><a href="Default.aspx?campus=dongfenglu" campus="dongfenglu">东风路</a><a href="Default.aspx?campus=longdong" campus="longdong">龙洞</a>
+              </div>
+           </div>
+        
+           <div id="headerDown">
+              
+              <ul>
+                 <li><a href="Default.aspx?campus=<%=campus %>"><img src="images/header1.png" /></a></li>
+                 <li><a href="List.aspx?catid=<%=columns[0] %>"><img src="images/header2.png" /></a></li>
+                 <li><a href="Maps.aspx?campus=<%=campus %>"><img src="images/header3.png" /></a></li>
+                 <li><a href="List.aspx?catid=<%=columns[1] %>"><img src="images/header4.png" /></a></li>
+                 <li><a href="List.aspx?catid=<%=columns[2] %>"><img src="images/header5.png" /></a></li>
+                 <li><a href="List.aspx?catid=<%=columns[3] %>" ><img src="images/header6.png" /></a></li>
+                 <li><a href="http://bbs.gdut.edu.cn/"  target="_blank"><img src="images/header7.png" /></a></li>
+              </ul>
+              
+           </div>
+           
+           <div id="school" ><p>你所在的校区为：<a><%=(campus=="daxuecheng"?"大学城":(campus=="longdong"?"龙洞":"东风路")) %>校区</a><span>(切换至：<a href="Default.aspx?campus=daxuecheng">大学城</a>-<a href="Default.aspx?campus=dongfenglu">东风路</a>-<a href="Default.aspx?campus=longdong">龙洞</a>)</span></p></div>
+        
+        </div> <!-- for header  -->
+        <asp:contentplaceholder id="ContentPlaceHolder" runat="server">
+        </asp:contentplaceholder>
+    
+        <div id="footer">
+           <img src="images/footer.png" />
+           <div>
+              <p>
+                  运营:工大在线运营团队 &amp; 技术:<a href="http://home.gdutonline.com" >维生数工作室</a></p><a href="../Default.aspx">工大在线</a>|<a href="http://www.gdutbbs.com/">工大后院</a>|<a href="http://bbs.gdut.edu.cn/">南国飘香</a><br />
+               
+           </div>
+        </div>
+
+
+</div> <!-- for container  -->
+
+<script type="text/javascript" src="script/correctPNG.js"></script>
+<script type="text/javascript">
+if(columns){$("#headerDown a[href*="+columns+"]").addClass("nav_circle")}
+$("#headerUp a[campus="+campus+"]").css("text-decoration","underline");
+
+
+//var changestr ='<span>(切换至：<a href="Default.aspx?campus=daxuecheng">大学城</a>-<a href="Default.aspx?campus=dongfenglu">东风路</a>-<a href="Default.aspx?campus=longdong">龙洞</a>)</span>'
+//var originstr=$("#school p").html();
+//$("#school p").hover(function(){$(this).html(originstr+changestr)},function(){$(this).html(originstr)})
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fba649b8a8a81d5e8b057e205b8b2b519' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </form>
+</body>
+</html>
